@@ -15,63 +15,42 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include QMK_KEYBOARD_H
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [0] = LAYOUT_ortho_5x12(
-        KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
-        KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_DEL,
-        KC_ESC,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-        KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT ,
-        MO(3),   KC_LCTL, KC_LALT, KC_LGUI, TL_LOWR, KC_SPC,  KC_SPC,  TL_UPPR, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+    [0] = LAYOUT_ortho_4x12(
+    KC_TAB,      KC_Q,      KC_W,      KC_E,      KC_R,      KC_T,             KC_Y,      KC_U,      KC_I,    KC_O,    KC_P,         KC_BSPC,
+    KC_LALT,     KC_A,      KC_S,      KC_D,      KC_F,      KC_G,             KC_H,      KC_J,      KC_K,    KC_L,    KC_SCLN,      KC_QUOT,
+    KC_LSFT,     KC_Z,      KC_X,      KC_C,      KC_V,      KC_B,             KC_N,      KC_M,      KC_COMM, KC_DOT,  KC_SLSH,      KC_RSFT,
+    KC_LCTL,     KC_LGUI,   KC_LALT,   MO(3),     MO(1),     MO(4),            KC_SPC,    MO(2),     MO(4),   KC_RALT, KC_RGUI,      KC_RCTL
     ),
-    [1] = LAYOUT_ortho_5x12(
-        KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_BSPC,
-        KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_DEL,
-        KC_DEL,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_PIPE,
-        BL_STEP, KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,S(KC_NUHS),S(KC_NUBS),KC_HOME,KC_END, _______,
-        _______, _______, _______, _______, _______, _______, _______, _______, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY
+    [1] = LAYOUT_ortho_4x12(
+    S(KC_GRV),  S(KC_1),      S(KC_2),       S(KC_3),       S(KC_4),        S(KC_5),       S(KC_6),     S(KC_7),      S(KC_8),      S(KC_9),      S(KC_0),      KC_MINS,
+    KC_ESC,     KC_MS_ACCEL1, KC_MS_WH_DOWN, KC_MS_WH_UP,    KC_MS_BTN1,    KC_MS_BTN2,    _______,     S(KC_MINS),   S(KC_EQL),    S(KC_LBRC),   S(KC_RBRC),   S(KC_BSLS),
+    KC_LSFT,    KC_NO,        KC_MS_WH_LEFT, KC_MS_WH_RIGHT, C(KC_MS_BTN1), S(KC_MS_BTN1), KC_NO,       KC_NO,        KC_NO,        KC_DEL,       KC_INS,       KC_ENT,
+    KC_LCTL,    KC_LGUI,      KC_LALT,       KC_NO,          KC_NO,         KC_ENT,        KC_ENT,      KC_NO,        KC_NO,        KC_RALT,      KC_RGUI,      KC_RCTL
     ),
-    [2] = LAYOUT_ortho_5x12(
-        KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
-        KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_DEL,
-        KC_DEL,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, KC_BSLS,
-        _______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_NUHS, KC_NUBS, KC_PGUP, KC_PGDN, _______,
-        _______, _______, _______, _______, _______, _______, _______, _______, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY
+    [2] = LAYOUT_ortho_4x12(
+			    KC_GRV,      KC_1,      KC_2,      KC_3,      KC_4,      KC_5,        KC_6,      KC_7,      KC_8,      KC_9,      KC_0,      S(KC_MINS),
+      KC_ESC,      KC_F1,     KC_F2,     KC_F3,     KC_F4,     KC_F5,       KC_F6,     KC_MINS,   KC_EQL,    KC_LBRC,   KC_RBRC,   KC_BSLS,
+      CW_TOGG,     KC_F7,     KC_F8,     KC_F9,     KC_F10,    KC_F11,      KC_F12,    KC_NO,     KC_NO,     KC_NO,     KC_NO,     KC_ENT,
+      KC_LCTL,     KC_LGUI,   KC_LALT,   KC_NO,     KC_NO,     KC_SPC,      KC_SPC,    KC_NO,     KC_NO,     KC_RALT,   KC_RGUI,   KC_RCTL
     ),
-    [3] = LAYOUT_ortho_5x12(
-        _______, QK_BOOT, DB_TOGG, RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD, RGB_VAI, RGB_VAD, _______,
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+    [3] = LAYOUT_ortho_4x12(
+      QK_BOOT,    KC_NO,        KC_NO,          KC_NO,          KC_NO,         KC_NO,         KC_PGUP,      KC_HOME,      KC_UP,      KC_END,      KC_INS,      KC_DEL,
+      KC_NO,      KC_MS_ACCEL0, KC_MS_WH_DOWN,  KC_MS_WH_UP,    KC_MS_BTN1,    KC_MS_BTN2,    KC_PGDN,      KC_LEFT,      KC_DOWN,    KC_RGHT,     KC_NO,       KC_NO,
+      KC_LSFT,    KC_NO,        KC_MS_WH_LEFT,  KC_MS_WH_RIGHT, C(KC_MS_BTN1), S(KC_MS_BTN1), KC_NO,        KC_NO,        KC_NO,      KC_NO,       KC_NO,       KC_NO,
+      KC_LCTL,    KC_NO,        KC_NO,          KC_NO,          KC_NO,         KC_NO,         KC_MS_BTN1,   KC_MS_BTN1,   KC_NO,      KC_MS_BTN2,  KC_NO,       TO(0)
 #if DYNAMIC_KEYMAP_LAYER_COUNT == 6
     ),
-    [4] = LAYOUT_ortho_5x12(
-        _______, QK_BOOT, DB_TOGG, RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD, RGB_VAI, RGB_VAD, _______,
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+    [4] = LAYOUT_ortho_4x12(
+     KC_NO,      KC_NO,        KC_NO ,         KC_NO,          KC_NO,         KC_NO,         KC_MS_WH_DOWN,   KC_MS_WH_LEFT,  KC_MS_UP,   KC_MS_WH_RIGHT,  KC_NO,      KC_NO,
+     KC_NO,      KC_MS_ACCEL0, KC_MS_WH_DOWN, KC_MS_WH_UP,    KC_MS_BTN1,    KC_MS_BTN2,    KC_MS_WH_UP,     KC_MS_LEFT,     KC_MS_DOWN, KC_MS_RIGHT,     KC_NO,      KC_NO,
+     KC_LSFT,    KC_NO,        KC_MS_WH_LEFT,  KC_MS_WH_RIGHT, C(KC_MS_BTN1), S(KC_MS_BTN1), KC_NO,           KC_NO,          KC_NO,      KC_NO,           KC_NO,      KC_NO,
+     KC_LCTL,    KC_NO,        KC_NO,          KC_NO,          KC_NO,         KC_NO,         KC_NO,           KC_NO,          KC_NO,      KC_NO,           KC_NO,      KC_NO
     ),
-    [5] = LAYOUT_ortho_5x12(
+    [5] = LAYOUT_ortho_4x12(
         _______, QK_BOOT, DB_TOGG, RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD, RGB_VAI, RGB_VAD, _______,
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 #endif
     )
 };
-
-#ifdef ENCODER_MAP_ENABLE
-const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
-    [0] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU), ENCODER_CCW_CW(KC_PGUP, KC_PGDN) },
-    [1] = { ENCODER_CCW_CW(RGB_MOD, RGB_RMOD), ENCODER_CCW_CW(KC_MNXT, KC_MPRV) },
-    [2] = { ENCODER_CCW_CW(_______, _______), ENCODER_CCW_CW(_______, _______) },
-    [3] = { ENCODER_CCW_CW(_______, _______), ENCODER_CCW_CW(_______, _______)
-#if DYNAMIC_KEYMAP_LAYER_COUNT == 6
-          },
-    [4] = { ENCODER_CCW_CW(_______, _______), ENCODER_CCW_CW(_______, _______) },
-    [5] = { ENCODER_CCW_CW(_______, _______), ENCODER_CCW_CW(_______, _______)
-#endif
-          }
-};
-#endif
