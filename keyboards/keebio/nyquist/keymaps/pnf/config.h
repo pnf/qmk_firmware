@@ -1,0 +1,14 @@
+#pragma once
+
+// customizations pnf
+#define BOTH_SHIFTS_TURNS_ON_CAP
+
+#ifdef RP2040_BOOTLOADER_DOUBLE_TAP_RESET
+#define DYNAMIC_KEYMAP_LAYER_COUNT 6
+#else
+#define DYNAMIC_KEYMAP_LAYER_COUNT 4
+#endif
+
+
+#define AUTO_SHIFT_TIMEOUT 150
+#define NO_AUTO_SHIFT_SPECIAL
