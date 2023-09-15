@@ -47,7 +47,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_LCTL,    KC_NO,        KC_NO,          KC_NO,          KC_NO,         KC_NO,         KC_MS_BTN1,   KC_MS_BTN1,   KC_NO,      KC_MS_BTN2,  KC_NO,       TO(0)
 #if DYNAMIC_KEYMAP_LAYER_COUNT == 6
     ),
-  // Moue layer, mostly cribbed from UHK
+  // Mouse layer, mostly cribbed from UHK
     [4] = LAYOUT_ortho_4x12(
      KC_NO,      KC_NO,        KC_NO ,         KC_NO,          KC_NO,         KC_NO,         KC_MS_WH_DOWN,   KC_MS_WH_LEFT,  KC_MS_UP,   KC_MS_WH_RIGHT,  KC_NO,      KC_NO,
      KC_NO,      KC_MS_ACCEL0, KC_MS_WH_DOWN, KC_MS_WH_UP,    KC_MS_BTN1,    KC_MS_BTN2,     KC_MS_WH_UP,     KC_MS_LEFT,     KC_MS_DOWN, KC_MS_RIGHT,     KC_NO,      KC_NO,
@@ -62,4 +62,33 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 #endif
     )
+};
+
+
+const uint16_t PROGMEM df_combo[] = {KC_D, KC_F, COMBO_END};
+const uint16_t PROGMEM jk_combo[] = {KC_J, KC_K, COMBO_END};
+
+const uint16_t PROGMEM er_combo[] = {KC_E, KC_R, COMBO_END};
+const uint16_t PROGMEM ui_combo[] = {KC_U, KC_I, COMBO_END};
+
+const uint16_t PROGMEM cv_combo[] = {KC_C, KC_V,    COMBO_END};
+const uint16_t PROGMEM mC_combo[] = {KC_M, KC_COMM, COMBO_END};
+
+const uint16_t PROGMEM sd_combo[] = {KC_S, KC_D, COMBO_END};
+const uint16_t PROGMEM kl_combo[] = {KC_K, KC_L, COMBO_END};
+
+
+const uint16_t PROGMEM fg_combo[] = {KC_F, KC_G, COMBO_END};
+
+// more here...
+
+// map combo names to their keys and the key they trigger
+combo_t key_combos[] = {
+  [0] = COMBO(df_combo, KC_LCTL), // FD, JK  -> control
+  [1] = COMBO(jk_combo, KC_RCTL),
+
+  [2] = COMBO(er_combo, KC_LGUI),  // ER, UI -> GUI
+  [3] = COMBO(ui_combo, KC_RGUI),
+  
+  [4] = COMBO(fg_combo, MO(3))  // FG -> navigation
 };
