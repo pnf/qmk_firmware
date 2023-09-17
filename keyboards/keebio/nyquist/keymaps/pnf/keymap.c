@@ -49,8 +49,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
   // Mouse layer, mostly cribbed from UHK
     [4] = LAYOUT_ortho_4x12(
-     KC_NO,      KC_NO,        KC_NO ,         KC_NO,          KC_NO,         KC_NO,         KC_MS_WH_DOWN,   KC_MS_WH_LEFT,  KC_MS_UP,   KC_MS_WH_RIGHT,  KC_NO,      KC_NO,
-     KC_NO,      KC_MS_ACCEL0, KC_MS_WH_DOWN, KC_MS_WH_UP,    KC_MS_BTN1,    KC_MS_BTN2,     KC_MS_WH_UP,     KC_MS_LEFT,     KC_MS_DOWN, KC_MS_RIGHT,     KC_NO,      KC_NO,
+     KC_NO,      KC_ACL2,      KC_NO ,         KC_NO,          KC_NO,         KC_NO,         KC_MS_WH_DOWN,   KC_MS_WH_LEFT,  KC_MS_UP,   KC_MS_WH_RIGHT,  KC_NO,      KC_NO,
+     KC_NO,      KC_ACL0,      KC_MS_WH_DOWN, KC_MS_WH_UP,    KC_MS_BTN1,    KC_MS_BTN2,     KC_MS_WH_UP,     KC_MS_LEFT,     KC_MS_DOWN, KC_MS_RIGHT,     KC_NO,      KC_NO,
      KC_LSFT,    KC_NO,        KC_MS_WH_LEFT,  KC_MS_WH_RIGHT, C(KC_MS_BTN1), S(KC_MS_BTN1), KC_NO,           KC_NO,          KC_NO,      KC_NO,           KC_NO,      KC_NO,
      KC_LCTL,    KC_NO,        KC_NO,          KC_NO,          KC_NO,         KC_NO,         KC_ENT,          KC_NO,          KC_NO,      KC_NO,           KC_NO,      KC_NO
     ),
@@ -80,7 +80,6 @@ const uint16_t PROGMEM kl_combo[] = {KC_K, KC_L, COMBO_END};
 
 const uint16_t PROGMEM fg_combo[] = {KC_F, KC_G, COMBO_END};
 
-// more here...
 
 // map combo names to their keys and the key they trigger
 combo_t key_combos[] = {
@@ -89,6 +88,9 @@ combo_t key_combos[] = {
 
   [2] = COMBO(er_combo, KC_LGUI),  // ER, UI -> GUI
   [3] = COMBO(ui_combo, KC_RGUI),
+
+  [4] = COMBO(sd_combo, KC_LALT),  // SD, KL -> Alt
+  [5] = COMBO(kl_combo, KC_RALT),
   
-  [4] = COMBO(fg_combo, MO(3))  // FG -> navigation
+  [6] = COMBO(fg_combo, MO(3))  // FG -> navigation
 };
