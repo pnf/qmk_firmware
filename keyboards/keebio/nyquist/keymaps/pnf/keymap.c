@@ -80,17 +80,27 @@ const uint16_t PROGMEM kl_combo[] = {KC_K, KC_L, COMBO_END};
 
 const uint16_t PROGMEM fg_combo[] = {KC_F, KC_G, COMBO_END};
 
+enum {
+  COMBO_LCTL,
+  COMBO_RCTL,
+  COMBO_LGUI,
+  COMBO_RGUI,
+  COMBO_LALT1,
+  COMBO_LALT2,
+  COMBO_NAV
+};
+
 
 // map combo names to their keys and the key they trigger
 combo_t key_combos[] = {
-  [0] = COMBO(df_combo, KC_LCTL), // FD, JK  -> control
-  [1] = COMBO(jk_combo, KC_RCTL),
+  [COMBO_LCTL] = COMBO(df_combo, KC_LCTL), // FD, JK  -> control
+  [COMBO_RCTL] = COMBO(jk_combo, KC_RCTL),
 
-  [2] = COMBO(er_combo, KC_LGUI),  // ER, UI -> GUI
-  [3] = COMBO(ui_combo, KC_RGUI),
+  [COMBO_LGUI] = COMBO(er_combo, KC_LGUI),  // ER, UI -> GUI
+  [COMBO_RGUI] = COMBO(ui_combo, KC_RGUI),
 
-  [4] = COMBO(sd_combo, KC_LALT),  // SD, KL -> Alt
-  [5] = COMBO(kl_combo, KC_RALT),
+  [COMBO_LALT1] = COMBO(sd_combo, KC_LALT),  // SD, KL -> Alt
+  [COMBO_LALT2] = COMBO(kl_combo, KC_LALT),  // (ralt is sometimes reassigned)
   
-  [6] = COMBO(fg_combo, MO(3))  // FG -> navigation
+  [COMBO_NAV] = COMBO(fg_combo, MO(3))  // FG -> navigation
 };
